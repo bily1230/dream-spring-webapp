@@ -11,12 +11,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=WebConfig.class)
 public class HelloWordTest {
+
+    /**
+     * @Autowired 在自动注入时，若一个类注入两次，就要匹配名称才能实现注入
+     */
     @Autowired
-    private HelloWord helloWord;
+    private HelloWord hello;
 
     @Test
-    public void cdShouldNotBeNull(){
-        helloWord.readWord();
+    public void helloWord(){
+        hello.readWord();
     }
 
 }

@@ -1,11 +1,21 @@
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import com.dream.spring.controller.HelloWord;
+import org.springframework.context.annotation.*;
 
 /**
  * Created by ning on 2017/8/20.
  */
+//@Configuration注解表明这个类是一个配置类
 @Configuration
-@ComponentScan("com.dream.spring.controller")
-public class WebConfig {
+//Java配置的扫描器
+//应用别的配置类
+@ComponentScan("com.dream.spring")
+//应用xml装配的bean
 
+public class WebConfig {
+    //@Bean或者@Bean("beanId")
+    @Bean(name = "hello")
+    public HelloWord helloWord(){
+      return new HelloWord("111");
+    }
 }
+
