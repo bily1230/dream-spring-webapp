@@ -1,7 +1,24 @@
 # dream-spring-webap
 
+##1.问题
+###1.关于配置路径问题
 
-##1.装配Bean
+ * classpath
+
+        配置的路径问题，classes目录存放src目录Java文件编译之后的class文件，xml、properties等资源配置文件
+        通过classpath 引用classes目录中的文件
+```XML
+<param-value>classpath:applicationContext-*.xml</param-value> 
+```
+        classpath：只会到你的class路径中查找找文件;
+        classpath*：不仅包含class路径，还包括jar文件中(class路径)进行查找。
+ * WEB-INF
+
+        WEB-INF/ 是资源目录, 客户端不能直接访问
+        classs端配置资源文件时需要引用全路径
+        @ImportResource("file:src/main/webapp/WEB-INF/applicationContext.xml")
+
+##2.装配Bean
 * 自动化装配
 
         java中 @ComponentScan注解，能够启动组件扫描
@@ -37,7 +54,9 @@ public class WebConfig {
 * XML显示装配
 
         可以在XML 引用java配置类
-        <bean class="WebConfig"></bean>     
+        <bean class="WebConfig"></bean> 
+            
+
         
         
 

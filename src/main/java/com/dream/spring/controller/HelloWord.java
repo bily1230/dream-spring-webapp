@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by ning on 2017/8/20.
  */
 
-@Component
+@Component("helloScan")
 public class HelloWord {
     private String name;
     private static int count;
