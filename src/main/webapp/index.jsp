@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>helloWord</title>
   </head>
   <body>
-  $END$
+      <form action="/helloWord/readWord" method="get">
+        <input type="submit" value="提交">
+      </form>
   </body>
 </html>

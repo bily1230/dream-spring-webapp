@@ -61,6 +61,13 @@
             <version>4.1.6.RELEASE</version>
         </dependency>
 
+        <!-- mongodb-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.8.0.RELEASE</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>dream-spring-webapp</finalName>

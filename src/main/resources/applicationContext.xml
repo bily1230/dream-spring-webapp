@@ -7,8 +7,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-      <context:component-scan base-package="com.dream.spring"></context:component-scan>
-      <bean id="helloJava" class="com.dream.spring.controller.HelloJava"></bean>
-       <bean class="WebConfig"></bean>
+     <!-- <context:component-scan base-package="com.dream.spring"></context:component-scan>
+       <bean class="WebConfig"></bean>-->
 
 </beans>
