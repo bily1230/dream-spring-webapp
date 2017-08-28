@@ -17,7 +17,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 public class ControllerTest {
-
 	
     @Test
     public void testHomePage(){
