@@ -18,6 +18,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 @WebAppConfiguration
 public class ControllerTest {
 
+	
     @Test
     public void testHomePage(){
         HelloWord helloWord = new HelloWord();
