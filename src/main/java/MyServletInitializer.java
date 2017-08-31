@@ -10,6 +10,7 @@ import com.dream.spring.servlet.MyServlet;
  */
 public class MyServletInitializer implements WebApplicationInitializer {
     @Override
+
     public void onStartup(ServletContext servletContext) throws ServletException {
         ServletRegistration.Dynamic myServlet = servletContext.addServlet("myServlet",MyServlet.class);
         myServlet.addMapping("/myServlet");
