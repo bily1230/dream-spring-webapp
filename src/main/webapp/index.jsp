@@ -1,17 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ning
-  Date: 2017/8/20
-  Time: 18:17
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java"   pageEncoding="UTF-8"%>
 <html>
   <head>
     <title>helloWord</title>
   </head>
   <body>
-      <form action="/helloWord/readWord" method="get">
+      <form action="/helloWord/xiao/readWord?name=你" method="post">
         <input type="submit" value="提交">
       </form>
   </body>
