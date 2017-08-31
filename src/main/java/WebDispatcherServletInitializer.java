@@ -1,4 +1,6 @@
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -29,4 +31,8 @@ public class WebDispatcherServletInitializer extends AbstractAnnotationConfigDis
         characterEncodingFilter.setForceEncoding(true);  
         return new Filter[] {characterEncodingFilter};  
     } */
+
+ /* protected void customizeRegisteration(ServletRegistration.Dynamic registration){
+      registration.setMultipartConfig(new MultipartConfigElement("spring/uploads"));
+  }*/
 }
