@@ -5,7 +5,7 @@
     <title>helloWord</title>
   </head>
   <body>
-      <form action="/helloWord/xiao/readWord?name=你" method="post">
+      <form action="/helloWord/12/readWord?name=你" method="post">
         <input type="submit" value="提交">
       </form>
   </body>
