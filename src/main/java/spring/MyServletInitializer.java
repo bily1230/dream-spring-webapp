@@ -1,3 +1,4 @@
+package spring;
 import java.util.EnumSet;
 
 import org.springframework.web.WebApplicationInitializer;
