@@ -4,8 +4,10 @@ package com.dream.spring.controller;
 import java.sql.SQLException;
 
 import com.dream.spring.domain.User;
+import com.dream.spring.repository.UserDataJpaRepository.UserDataJpaRepository;
 import com.dream.spring.repository.jdbc.UserRepository;
 import com.dream.spring.repository.jdbcTemplate.UserTemplateRepository;
+import com.dream.spring.repository.jpa.UserJpaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,12 @@ public class HelloWord {
 	
 	@Autowired
 	UserTemplateRepository userTemplateRepository;
+
+    @Autowired
+    UserJpaRepository userJpaRepository;
+
+    @Autowired
+    UserDataJpaRepository userDataJpaRepository;
 	
     @RequestMapping(value="/{age}/readWord" ,method = RequestMethod.POST)
     public String readWord(@PathVariable("age") String age, @RequestParam("name")String name,
@@ -42,16 +50,23 @@ public class HelloWord {
         user.setAge(age);
         System.out.println("中国梦！作为中国人---"+name+"--"+age);
         model.addAttribute("name",name);
-        model.addAttribute("age",age);
+        model.addAttribute("age",999);
         model.addFlashAttribute(user);
-        
-        userTemplateRepository.addUser(user);
-       // userRepository.insertUser(user);
-        
-        Context initCtx = new InitialContext();
+
+        User finduser =  userDataJpaRepository.findByName("你");
+        if(finduser!=null){
+            System.out.println("chaxun："+finduser.getName());
+        }else{
+            System.out.println("nononono");
+        }
+
+        //userTemplateRepository.addUser(user);
+        //userRepository.insertUser(user);
+         userJpaRepository.addUser(user);
+       /* Context initCtx = new InitialContext();
 		Context envCtx = (Context) initCtx.lookup("java:comp/env");
 		String str = (String) envCtx.lookupLink("filesystem/root");
-		System.out.println("JNDI"+str);
+		System.out.println("JNDI"+str);*/
         
         return "redirect:/redirectHello/sayName/{name}";
     }
