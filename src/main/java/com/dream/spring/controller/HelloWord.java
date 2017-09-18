@@ -61,7 +61,7 @@ public class HelloWord {
         }
 
         //userTemplateRepository.addUser(user);
-        //userRepository.insertUser(user);
+        // userRepository.insertUser(user);
          userJpaRepository.addUser(user);
        /* Context initCtx = new InitialContext();
 		Context envCtx = (Context) initCtx.lookup("java:comp/env");

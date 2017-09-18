@@ -24,7 +24,6 @@ public class WebProject {
         multipartResolver.setMaxUploadSize(2097150);
         multipartResolver.setMaxInMemorySize(0);
         return multipartResolver;
-
     }*/
 
 }

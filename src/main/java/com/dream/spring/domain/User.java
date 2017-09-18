@@ -1,16 +1,27 @@
 package com.dream.spring.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import java.io.Serializable;
 
 /**
  * Created by ning on 2017/9/3.
  */
+
+@Table(name = "User")
 @Entity
 public class User implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8057834312614187597L;
+	
+	@GeneratedValue
+	@Id
     private String id;
     private String name;
     private String age;
