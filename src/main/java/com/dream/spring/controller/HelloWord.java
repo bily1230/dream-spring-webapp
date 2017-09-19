@@ -55,7 +55,7 @@ public class HelloWord {
 
         User finduser =  userDataJpaRepository.findByName("你");
         if(finduser!=null){
-            System.out.println("chaxun："+finduser.getName());
+            System.out.println("chaxun："+finduser.getAge());
         }else{
             System.out.println("nononono");
         }

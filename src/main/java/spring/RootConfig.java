@@ -10,24 +10,25 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * Created by ning on 2017/8/27.
  */
 @Configurable
-@Import(JpaConfiguration.class)
+@Import({JpaConfiguration.class})
+@EnableTransactionManagement 
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {
 		
-	
-	
 	@Bean
 	public JndiObjectFactoryBean dataSource() throws NamingException{
 
@@ -41,7 +42,6 @@ public class RootConfig {
 		/*Context initContext = new InitialContext();
 		Context envContext  = (Context)initContext.lookup("java:/comp/env");
 		return (DataSource)envContext.lookup("jdbc/MySQL");*/
-		
 		
 		/*BasicDataSource basicDataSource  = new BasicDataSource();
 		basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -84,5 +84,19 @@ public class RootConfig {
 	public BeanPostProcessor persistenceTranslation(){
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
+	
+	@Bean
+	public DataSourceTransactionManager txManager(DataSource dataSource){
+		
+		DataSourceTransactionManager txManager = new DataSourceTransactionManager();
+		txManager.setDataSource(dataSource);
+		return txManager;
+	}
+	
+	/*@Bean
+	public  AnnotationTransactionAspect annotationTransactionAspect(DataSourceTransactionManager txManager){
+		AnnotationTransactionAspect.aspectOf().setTransactionManager(txManager);
+	}*/
+	
 }
 
