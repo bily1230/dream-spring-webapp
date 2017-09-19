@@ -53,7 +53,7 @@ public class HelloWord {
         model.addAttribute("age",999);
         model.addFlashAttribute(user);
 
-        User finduser =  userDataJpaRepository.findByName("你");
+        User finduser =  userJpaRepository.findUser();
         if(finduser!=null){
             System.out.println("chaxun："+finduser.getAge());
         }else{
@@ -62,7 +62,7 @@ public class HelloWord {
 
         //userTemplateRepository.addUser(user);
         // userRepository.insertUser(user);
-         userJpaRepository.addUser(user);
+
        /* Context initCtx = new InitialContext();
 		Context envCtx = (Context) initCtx.lookup("java:comp/env");
 		String str = (String) envCtx.lookupLink("filesystem/root");

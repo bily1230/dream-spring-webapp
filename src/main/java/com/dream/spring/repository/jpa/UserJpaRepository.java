@@ -19,9 +19,9 @@ public class UserJpaRepository {
 	
     @PersistenceContext
     private EntityManager entityManagerFactory;
-    
-    
-    public void addUser(User user){
-        entityManagerFactory.persist(user);
+
+    @Transactional
+    public User findUser(){
+      return  entityManagerFactory.find(User.class,"44");
     }
 }

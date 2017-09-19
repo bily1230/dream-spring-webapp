@@ -23,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Created by ning on 2017/8/27.
  */
 @Configurable
-@Import({JpaConfiguration.class})
+@Import({JpaConfiguration.class,AspectConfig.class})
 @EnableTransactionManagement 
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
@@ -84,10 +84,10 @@ public class RootConfig {
 	public BeanPostProcessor persistenceTranslation(){
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
-	
+
+
 	@Bean
 	public DataSourceTransactionManager txManager(DataSource dataSource){
-		
 		DataSourceTransactionManager txManager = new DataSourceTransactionManager();
 		txManager.setDataSource(dataSource);
 		return txManager;
