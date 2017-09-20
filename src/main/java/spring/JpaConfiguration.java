@@ -2,6 +2,7 @@ package spring;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement 
 @EnableJpaRepositories(basePackages = "com.dream.spring.repository.UserDataJpaRepository")
 public class JpaConfiguration {
-	
+
+	@Autowired
+	private DataSource dataSource;
+
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter(){
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
@@ -33,7 +37,7 @@ public class JpaConfiguration {
 	}
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,
-																		   JpaVendorAdapter jpaVendorAdapter){
+																	   JpaVendorAdapter jpaVendorAdapter){
 		LocalContainerEntityManagerFactoryBean emfb=
 				new LocalContainerEntityManagerFactoryBean();
 		emfb.setDataSource(dataSource);
@@ -46,7 +50,6 @@ public class JpaConfiguration {
 	public BeanPostProcessor persistenceTranslation(){
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
-
 
 	@Bean
 	public DataSourceTransactionManager transactionManager(DataSource dataSource){

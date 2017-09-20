@@ -4,10 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,21 +20,22 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 /**
  * Created by ning on 2017/8/27.
  */
-@Configurable
+
+@Configuration
 @Import({JpaConfiguration.class,AspectConfig.class})
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {
 		
 	@Bean
-	public JndiObjectFactoryBean dataSource() throws NamingException{
+	public DataSource dataSource() throws NamingException{
 
 		JndiObjectFactoryBean factory = new JndiObjectFactoryBean();
 		factory.setJndiName("jdbc/MySQL");
 		factory.setResourceRef(true);
 		factory.setProxyInterface(javax.sql.DataSource.class);
 		factory.afterPropertiesSet();
-		return factory;
+		return (DataSource)factory.getObject();
 		
 		/*Context initContext = new InitialContext();
 		Context envContext  = (Context)initContext.lookup("java:/comp/env");
@@ -60,43 +58,6 @@ public class RootConfig {
 	}
 
 
-	@Bean
-	public JpaVendorAdapter jpaVendorAdapter(){
-		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-		adapter.setDatabase(Database.MYSQL);
-		adapter.setShowSql(true);
-		adapter.setGenerateDdl(false);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
-		return adapter;
-	}
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,
-																		   JpaVendorAdapter jpaVendorAdapter){
-		LocalContainerEntityManagerFactoryBean emfb=
-				new LocalContainerEntityManagerFactoryBean();
-		emfb.setDataSource(dataSource);
-		emfb.setJpaVendorAdapter(jpaVendorAdapter);
-		emfb.setPackagesToScan("com.dream.spring.domain");
-		return emfb;
-	}
 
-	@Bean
-	public BeanPostProcessor persistenceTranslation(){
-		return new PersistenceExceptionTranslationPostProcessor();
-	}
-
-
-	@Bean
-	public DataSourceTransactionManager transactionManager(DataSource dataSource){
-		DataSourceTransactionManager txManager = new DataSourceTransactionManager();
-		txManager.setDataSource(dataSource);
-		return txManager;
-	}
-	
-	/*@Bean
-	public  AnnotationTransactionAspect annotationTransactionAspect(DataSourceTransactionManager txManager){
-		AnnotationTransactionAspect.aspectOf().setTransactionManager(txManager);
-	}*/
-	
 }
 
