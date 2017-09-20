@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jndi.JndiObjectFactoryBean;
@@ -24,7 +25,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @Configurable
 @Import({JpaConfiguration.class,AspectConfig.class})
-@EnableTransactionManagement 
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {
@@ -87,7 +87,7 @@ public class RootConfig {
 
 
 	@Bean
-	public DataSourceTransactionManager txManager(DataSource dataSource){
+	public DataSourceTransactionManager transactionManager(DataSource dataSource){
 		DataSourceTransactionManager txManager = new DataSourceTransactionManager();
 		txManager.setDataSource(dataSource);
 		return txManager;
