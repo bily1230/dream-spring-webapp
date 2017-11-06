@@ -13,7 +13,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class JMSProducer {
 	
-	 //默认连接用户名
+	/* //默认连接用户名
     private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
     //默认连接密码
     private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
@@ -64,12 +64,12 @@ public class JMSProducer {
         }
 
     }
-    /**
+    *//**
      * 发送消息
      * @param session
      * @param messageProducer  消息生产者
      * @throws Exception
-     */
+     *//*
     public static void sendMessage(Session session,MessageProducer messageProducer) throws Exception{
         for (int i = 0; i < JMSProducer.SENDNUM; i++) {
             //创建一条文本消息 
@@ -80,5 +80,5 @@ public class JMSProducer {
         }
 
     }
-
+*/
 	}

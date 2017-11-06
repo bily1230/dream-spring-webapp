@@ -1,4 +1,8 @@
 package spring;
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -20,13 +24,15 @@ public class WebDispatcherServletInitializer extends AbstractAnnotationConfigDis
         return new String[]{"/"};
     }
     
-  /*  @Override  
+    @Override  
     protected Filter[] getServletFilters() {  
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();  
-        characterEncodingFilter.setEncoding("UTF-8");  
-        characterEncodingFilter.setForceEncoding(true);  
-        return new Filter[] {characterEncodingFilter};  
-    } */
+    	CharacterEncodingFilter charFilter = new CharacterEncodingFilter();
+        charFilter.setEncoding("UTF-8");
+        charFilter.setForceEncoding(true);
+        
+    	HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter(); 
+        return new Filter[] {hiddenHttpMethodFilter,charFilter};  
+    } 
 
  /* protected void customizeRegisteration(ServletRegistration.Dynamic registration){
       registration.setMultipartConfig(new MultipartConfigElement("spring/uploads"));

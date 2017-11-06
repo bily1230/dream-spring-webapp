@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 
 @Configuration
-@Import({JpaConfiguration.class,AspectConfig.class})
+@Import({JpaConfiguration.class,AspectConfig.class,RabbitConfiguration.class})
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {

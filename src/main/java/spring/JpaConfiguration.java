@@ -35,6 +35,7 @@ public class JpaConfiguration {
 		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
 		return adapter;
 	}
+	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,
 																	   JpaVendorAdapter jpaVendorAdapter){

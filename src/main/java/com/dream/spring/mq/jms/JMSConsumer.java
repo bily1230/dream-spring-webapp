@@ -12,7 +12,7 @@ import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class JMSConsumer {
-
+/*
 	  private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;//默认连接用户名
 	    private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;//默认连接密码
 	    private static final String BROKEURL = ActiveMQConnection.DEFAULT_BROKER_URL;//默认连接地址
@@ -55,5 +55,5 @@ public class JMSConsumer {
 	        }
 
 	    }
-
+*/
 }
