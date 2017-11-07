@@ -1,4 +1,4 @@
-package com.dream.spring.Utils;
+package com.dream.spring.Utils.demo;
 
 
 import java.util.ArrayList;
@@ -23,22 +23,41 @@ import org.springframework.web.client.RestTemplate;
 
 import com.dream.spring.domain.User;
 
-
+/**
+ * RestTemplate 测试实例
+ * @author nb
+ * 教程 : http://blog.csdn.net/yiifaa/article/details/77939282
+ */
 
 public class RestTest {
 
 	public static void main(String[] args) {
 		
-		//http://blog.csdn.net/yiifaa/article/details/77939282
+		String formUrl = "http://127.0.0.1:8099/rest/form";
+		String payLoadUrl = "http://127.0.0.1:8099/rest/payLoad";
 		
-		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-		map.add("name", "yyyyyyy");
-		map.add("age", "hhhhh");
 		
+		//form表单提交只能用MultiValueMap 不能用Map
+		MultiValueMap<String, String> multiValueMap = new LinkedMultiValueMap<String, String>();
+		multiValueMap.add("name", "小明");
+		multiValueMap.add("age", "88");
 		HttpHeaders headers = new HttpHeaders();
-		//headers.setContentType(MediaType.APPLICATION_JSON);
+		// 需要设置contentType 为 application/x-www-form-urlencoded
 		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+		RestTemplate restTemplate = new RestTemplate();
+		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<MultiValueMap<String,String>>(multiValueMap,headers);
+		ResponseEntity<Object> form = restTemplate.postForEntity(formUrl, httpEntity, Object.class);
 		
+
+		
+		//PayLoad 提交
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("name", "小黄");
+		map.put("age", "99");
+		HttpHeaders payHeaders = new HttpHeaders();
+		payHeaders.setContentType(MediaType.APPLICATION_JSON);
+		HttpEntity<Map<String,Object>> payEntity = new HttpEntity<Map<String,Object>>(map,payHeaders);
+		//添加消息转换器,若不添加消息转换器,则需只能为String
 		List<HttpMessageConverter<?>> coverterList = new ArrayList<HttpMessageConverter<?>>();
 		coverterList.add(new MappingJackson2HttpMessageConverter());
 		coverterList.add(new ByteArrayHttpMessageConverter());
@@ -47,17 +66,14 @@ public class RestTest {
 		coverterList.add(new StringHttpMessageConverter());
 		coverterList.add(new FormHttpMessageConverter());
 		
-		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<MultiValueMap<String,String>>(map,headers);
-		
-		String url = "http://127.0.0.1:8099/test/tput/hhhh";
-		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.setMessageConverters(coverterList);
 		
+		ResponseEntity<Object> payLoad = restTemplate.postForEntity(payLoadUrl, payEntity, Object.class);
 		
 		
-		ResponseEntity<Object> result = restTemplate.postForEntity(url, httpEntity, Object.class);
 		
-		System.out.println(result.getBody());
+		System.out.println(form.getBody());
+		System.out.println(payLoad.getBody());
 
 	}
 
