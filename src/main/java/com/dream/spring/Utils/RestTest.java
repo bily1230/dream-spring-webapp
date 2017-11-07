@@ -29,6 +29,8 @@ public class RestTest {
 
 	public static void main(String[] args) {
 		
+		//http://blog.csdn.net/yiifaa/article/details/77939282
+		
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
 		map.add("name", "yyyyyyy");
 		map.add("age", "hhhhh");
