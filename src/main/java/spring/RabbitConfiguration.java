@@ -24,9 +24,9 @@ public class RabbitConfiguration {
     public ConnectionFactory connectionFactory() throws Exception {
 		 CachingConnectionFactory connectionFactory =
 			        new CachingConnectionFactory("localhost");
-			    connectionFactory.setUsername("guest");
-			    connectionFactory.setPassword("guest");
-			    return connectionFactory;
+			        connectionFactory.setUsername("guest");
+			        connectionFactory.setPassword("guest");
+			        return connectionFactory;
     }
 
     @Bean
@@ -34,6 +34,11 @@ public class RabbitConfiguration {
         return new RabbitAdmin(connectionFactory);
     }
 
+    /**
+     * 重试功能
+     * @param connectionFactory
+     * @return
+     */
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
     	
