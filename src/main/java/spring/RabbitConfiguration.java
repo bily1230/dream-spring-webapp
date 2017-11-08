@@ -6,10 +6,16 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
 import org.springframework.retry.support.RetryTemplate;
+
+import com.dream.spring.mq.rabbit.listener.RabbitReceiverMessageListener;
+
+
+
 
 /**
  *  Rabbit
@@ -52,7 +58,21 @@ public class RabbitConfiguration {
         template.setRetryTemplate(retryTemplate);
         return template;
     }
-
+    
+    @Bean
+    public SimpleMessageListenerContainer messageListenerContainer(ConnectionFactory connectionFactory){
+    	SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+    	container.setConnectionFactory(connectionFactory);
+    	//container.setQueues(myQueue());
+    	container.setMessageListener(rabbitReceiverMessageListener());
+    	return container;
+    }
+    
+    @Bean
+    public RabbitReceiverMessageListener rabbitReceiverMessageListener(){
+    	return new RabbitReceiverMessageListener();
+    }
+    
     @Bean
     public Queue myQueue() {
        return new Queue("myqueue");

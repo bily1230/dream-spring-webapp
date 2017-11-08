@@ -13,6 +13,7 @@ import javax.servlet.ServletRegistration;
 import com.dream.spring.servlet.MyServlet;
 
 /**
+ * 添加一个servlet
  * Created by ning on 2017/8/29.
  */
 public class MyServletInitializer implements WebApplicationInitializer {
