@@ -10,7 +10,6 @@ public class CharsetEncodeFilter implements WebApplicationInitializer{
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		
 		
-		
 	}
 
 }
