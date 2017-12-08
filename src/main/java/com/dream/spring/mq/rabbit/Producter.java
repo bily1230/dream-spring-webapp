@@ -16,7 +16,7 @@ import com.rabbitmq.client.MessageProperties;
 
 public class Producter {
 	
-	private final static String QUEUE_NAME = "myqueue";
+	private final static String QUEUE_NAME = "myqueue1";
 	
 	public static void main(String[] args) throws IOException, TimeoutException {
 		ConnectionFactory factory = new ConnectionFactory();    

@@ -15,7 +15,7 @@ import com.rabbitmq.client.Envelope;
 
 
 public class Customer {
-	private final static String QUEUE_NAME = "myqueue";
+	private final static String QUEUE_NAME = "myqueue1";
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException, TimeoutException {
