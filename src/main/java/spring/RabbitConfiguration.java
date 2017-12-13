@@ -10,6 +10,7 @@ import org.springframework.amqp.core.Declarable;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.Binding.DestinationType;
+import org.springframework.amqp.rabbit.AsyncRabbitTemplate;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -17,6 +18,7 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.support.converter.SimpleMessageConverter;
@@ -40,11 +42,12 @@ import com.dream.spring.mq.rabbit.listener.RabbitReceiverMessageListener;
 public class RabbitConfiguration{
 	
 	private final static String QUEUE_ONE = "MyQueue";
-	private final static String QUEUE_two= "MyQueue2";
+	private final static String QUEUE_two= "MyQueue3";
 	private final static String EXCHANGE_ONE = "MyExchange";
+	private final static String REPLY_EXCHANGE = "replyExchange";
 	
 	@Bean
-    public ConnectionFactory connectionFactory() throws Exception {
+    public ConnectionFactory connectionFactory() {
 		 CachingConnectionFactory connectionFactory =
 			        new CachingConnectionFactory("localhost");
 			        connectionFactory.setUsername("guest");
@@ -63,9 +66,9 @@ public class RabbitConfiguration{
      * @return
      */
     @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    public RabbitTemplate rabbitTemplate() {
     	
-    	RabbitTemplate template = new RabbitTemplate(connectionFactory);
+    	RabbitTemplate template = new RabbitTemplate(connectionFactory());
     	RetryTemplate retryTemplate = new RetryTemplate();
         ExponentialBackOffPolicy backOffPolicy = new ExponentialBackOffPolicy();
         backOffPolicy.setInitialInterval(500);
@@ -78,10 +81,43 @@ public class RabbitConfiguration{
         return template;
     }
     
+    
+    /*
+     * AsyncRabbitTemplate 中 replyRebbitTemplate()  和simpleMessageListenerContainer() 中的 setMessageConverter()消息转换器必须相同
+     */
     @Bean
-    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(ConnectionFactory connectionFactory){
+    public AsyncRabbitTemplate asyncRabbitTemplate(){
+    	RabbitTemplate template = new RabbitTemplate(connectionFactory());
+    	template.setExchange(EXCHANGE_ONE);
+    	template.setRoutingKey("k1");
+    	template.setReplyTimeout(6000);
+    	template.setMandatory(true);
+    	return new AsyncRabbitTemplate(replyRebbitTemplate(),simpleMessageListenerContainer(),"replyExchange/k2");
+    }
+    
+    @Bean
+    public RabbitTemplate replyRebbitTemplate(){
+    	 RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
+    	 RetryTemplate retryTemplate = new RetryTemplate();
+         ExponentialBackOffPolicy backOffPolicy = new ExponentialBackOffPolicy();
+         backOffPolicy.setInitialInterval(500);
+         backOffPolicy.setMultiplier(10.0);
+         backOffPolicy.setMaxInterval(10000);
+         retryTemplate.setBackOffPolicy(backOffPolicy);
+         rabbitTemplate.setRetryTemplate(retryTemplate);
+         rabbitTemplate.setMessageConverter(new SimpleMessageConverter());
+         rabbitTemplate.setRoutingKey("k1");
+         rabbitTemplate.setExchange(EXCHANGE_ONE);
+         rabbitTemplate.setReplyTimeout(6000);
+         rabbitTemplate.setMandatory(true);
+         return rabbitTemplate;
+    	
+    }
+    
+    @Bean
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(){
     	SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-        factory.setConnectionFactory(connectionFactory);
+        factory.setConnectionFactory(connectionFactory());
         factory.setConcurrentConsumers(3); 
         factory.setMaxConcurrentConsumers(10);
         factory.setMessageConverter(new SimpleMessageConverter());
@@ -95,17 +131,17 @@ public class RabbitConfiguration{
     
     
    @Bean
-    public SimpleMessageListenerContainer simpleMessageListenerContainer(ConnectionFactory connectionFactory){
+    public SimpleMessageListenerContainer simpleMessageListenerContainer(){
     	SimpleMessageListenerContainer factory = new SimpleMessageListenerContainer();
-        factory.setConnectionFactory(connectionFactory);
-       // factory.setMessageListener(rabbitReceiverMessageListener());
-        factory.setConcurrentConsumers(3);
-        factory.setMaxConcurrentConsumers(10);
+        factory.setConnectionFactory(connectionFactory());
+       /* factory.setConcurrentConsumers(3);
+        factory.setMaxConcurrentConsumers(10);*/
         factory.setMessageConverter(new SimpleMessageConverter());
-       // factory.setQueueNames(QUEUE_ONE);
+        factory.addQueueNames(QUEUE_two);
         return factory;
     }
     
+   
     @Bean
     public RabbitReceiverMessageListener rabbitReceiverMessageListener(){
     	return new RabbitReceiverMessageListener();
@@ -125,6 +161,10 @@ public class RabbitConfiguration{
     	return new DirectExchange(EXCHANGE_ONE);
     }
     
+    @Bean DirectExchange replyExchange(){
+    	return new DirectExchange(REPLY_EXCHANGE);
+    }
+    
     @Bean
     public Binding b1(){
     	return BindingBuilder.bind(q1()).to(e1()).with("k1");
@@ -132,7 +172,7 @@ public class RabbitConfiguration{
     
     @Bean
     public Binding b2(){
-    	return BindingBuilder.bind(q2()).to(e1()).with("k2");
+    	return BindingBuilder.bind(q2()).to(replyExchange()).with("k2");
     }
     
     @Bean
