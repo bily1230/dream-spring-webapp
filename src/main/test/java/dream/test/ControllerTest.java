@@ -1,3 +1,4 @@
+package dream.test;
 import com.dream.spring.controller.HelloWord;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,5 +25,5 @@ public class ControllerTest {
         MockMvc mockMvc = standaloneSetup(helloWord).build();
         mockMvc.perform(get("/helloWord/readWord"))
                 .andExpect(view().name("return"));
-    }
+    } 
 }
