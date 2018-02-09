@@ -1,7 +1,7 @@
 # dream-spring-webap
 
-## 1.问题
-### 1.关于配置路径问题
+##1.问题
+###1.关于配置路径问题
 
  * classpath
 
@@ -18,7 +18,7 @@
         classs端配置资源文件时需要引用全路径
         @ImportResource("file:src/main/webapp/WEB-INF/applicationContext.xml")
 
-## 2.装配Bean
+##2.装配Bean
 * 自动化装配
 
         java中 @ComponentScan注解，能够启动组件扫描
@@ -57,9 +57,9 @@ public class WebConfig {
         <bean class="WebConfig"></bean> 
         
         
-### 7.Spring MVC 高级技术
+###7.Spring MVC 高级技术
 
-#### 7.1跨重定向请求传递数据
+####7.1跨重定向请求传递数据
 
         对于重定向，模型并不能用来传递数据。但是我们也有一些其他方案，能够从发起重
         定向的方法传递数据给处理重定向方法中：
