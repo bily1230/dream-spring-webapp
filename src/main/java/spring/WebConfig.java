@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.http.converter.HttpMessageConverter;
 
+import com.dream.spring.manager.Manager;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 
 
@@ -37,10 +38,10 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 
 public class WebConfig extends WebMvcConfigurerAdapter{
 	
-	/*@Bean
-	public JdbcTemplate jdbcTemplate(DataSource dataSource){
-		return new JdbcTemplate(dataSource);
-	}*/
+	@Bean
+	public Manager manager(DataSource dataSource){
+		return new Manager();
+	}
 	
     @Bean
     public ViewResolver viewResolver(){
