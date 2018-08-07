@@ -5,20 +5,23 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.dream.spring.domain.User;
 
 @RestController
 @RequestMapping("/test")
 public class myTestController {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(myTestController.class);
+	
 	@RequestMapping(value="/put", method =RequestMethod.PUT)
 	public Object test(HttpServletRequest request ){
+		
+		LOGGER.info("--------------");
 		
 		String name = request.getParameter("name");
 		Map<String,Object> map = new HashMap<String,Object>();

@@ -39,7 +39,7 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 public class WebConfig extends WebMvcConfigurerAdapter{
 	
 	@Bean
-	public Manager manager(DataSource dataSource){
+	public Manager manager(){
 		return new Manager();
 	}
 	
