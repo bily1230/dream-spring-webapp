@@ -34,7 +34,7 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 //@ComponentScan("com.dream.spring")
 @Import(WebProject.class)
 //应用xml装配的bean
-@ComponentScan("com.dream.spring.controller")
+@ComponentScan("com.dream.spring")
 
 public class WebConfig extends WebMvcConfigurerAdapter{
 	

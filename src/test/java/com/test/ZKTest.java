@@ -45,7 +45,7 @@ public class ZKTest {
 		connectedSemaphore.await();
 
 		System.out.println("..");
-		zk.create("/testRootnew", "testRoot".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+		zk.create("/testRoot", "testRoot".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 		zk.close();
 	}
 }
