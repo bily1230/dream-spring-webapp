@@ -2,13 +2,11 @@ package com.dream.spring.controller;
 
 
 import java.sql.SQLException;
-import java.util.concurrent.ExecutionException;
 
-import com.dream.spring.repository.UserDataJpaRepository.UserDataJpaRepository;
-import com.dream.spring.repository.jdbc.UserRepository;
-import com.dream.spring.repository.jdbcTemplate.UserTemplateRepository;
-import com.dream.spring.repository.jpa.UserJpaRepository;
+import javax.naming.NamingException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -17,7 +15,6 @@ import org.springframework.amqp.rabbit.AsyncRabbitTemplate.RabbitConverterFuture
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +22,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.naming.NamingException;
+import com.dream.spring.repository.UserDataJpaRepository.UserDataJpaRepository;
+import com.dream.spring.repository.jdbc.UserRepository;
+import com.dream.spring.repository.jdbcTemplate.UserTemplateRepository;
+import com.dream.spring.repository.jpa.UserJpaRepository;
 
 /**
  * Created by ning on 2017/8/20.
@@ -34,6 +34,8 @@ import javax.naming.NamingException;
 //@Controller
 //@RequestMapping("/helloWord")
 public class HelloWord {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(HelloWord.class);
 	@Autowired
 	UserRepository userRepository;
 	
@@ -52,10 +54,9 @@ public class HelloWord {
     @Autowired
     AsyncRabbitTemplate asyncRabbitTemplate;
 	
-    @RequestMapping(value="/{age}/readWord" ,method = RequestMethod.POST)
+    @RequestMapping(value="/{age}/readWord" ,method = RequestMethod.GET)
     public String readWord(@PathVariable("age") String age, @RequestParam("name")String name,
                            RedirectAttributes model) throws NamingException, SQLException{
-    	
     	
     	
     	/*rabbitTemplate.setExchange("MyExchange");
@@ -68,6 +69,9 @@ public class HelloWord {
     			.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN)
     			.setHeader("name", "111")
     			.build();
+		
+		LOGGER.info("2111111111");
+		LOGGER.debug("rabbitmq log 测试");
 		//Object reply = rabbitTemplate.convertSendAndReceive(message);
 		
 		/*ListenableFuture<Object> future = asyncRabbitTemplate.convertSendAndReceive(message);

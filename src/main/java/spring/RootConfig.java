@@ -2,18 +2,35 @@ package spring;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+<<<<<<< HEAD
 import org.springframework.context.annotation.*;
+=======
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Import;
+>>>>>>> c1494374afe010e42d98605a323349d510623daa
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c1494374afe010e42d98605a323349d510623daa
 /**
  * Created by ning on 2017/8/27.
  */
 
 @Configuration
+<<<<<<< HEAD
 @Import({AspectConfig.class,RabbitConfiguration.class})
 @ComponentScan(basePackages ={"com.dream.spring.manager"},excludeFilters =
+=======
+@Import({AspectConfig.class,RabbitConfiguration.class,JpaConfiguration.class})
+@ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
+>>>>>>> c1494374afe010e42d98605a323349d510623daa
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {
 		
