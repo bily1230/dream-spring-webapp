@@ -1,5 +1,6 @@
 package com.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
@@ -9,11 +10,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dream.spring.manager.Manager;
-
-import spring.ManagerConfig;
+import spring.JunitConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ManagerConfig.class)
+@ContextConfiguration(classes = JunitConfig.class)
 public class BenaTest {
 	@Autowired
 	 private Manager manager;
@@ -21,7 +21,7 @@ public class BenaTest {
 	public void test1(){
 				 
 		String name = manager.getName();
-		assertNotNull(name);
+		assertEquals("lihan", name);
 	}
 	
 }

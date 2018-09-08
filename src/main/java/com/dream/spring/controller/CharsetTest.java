@@ -8,8 +8,9 @@ import java.nio.charset.Charset;
 public class CharsetTest {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		
-		
+
+
+
 		String name = "小明";
 		byte[] arr = name.getBytes("utf-8");
 		String newName = new String(arr,"utf-8");

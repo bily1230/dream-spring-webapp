@@ -31,8 +31,8 @@ import javax.naming.NamingException;
  * Created by ning on 2017/8/20.
  */
 
-@Controller
-@RequestMapping("/helloWord")
+//@Controller
+//@RequestMapping("/helloWord")
 public class HelloWord {
 	@Autowired
 	UserRepository userRepository;

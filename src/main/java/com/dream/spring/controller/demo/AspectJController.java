@@ -1,5 +1,7 @@
 package com.dream.spring.controller.demo;
 
+import com.dream.spring.manager.AspectJManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,5 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/aspect")
-public class AspectController {
+public class AspectJController {
+    @Autowired
+    private AspectJManager aspectJManager;
+
+    @RequestMapping("/aop")
+    public void testAop(){
+        aspectJManager.show("李晗是笨蛋");
+    }
+
 }

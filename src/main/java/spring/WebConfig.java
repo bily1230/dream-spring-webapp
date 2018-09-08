@@ -3,17 +3,11 @@ package spring;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.*;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -32,7 +26,7 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 @Configuration
 @EnableWebMvc
 //@ComponentScan("com.dream.spring")
-@Import(WebProject.class)
+@Import({WebProject.class, AspectConfig.class})
 //应用xml装配的bean
 @ComponentScan("com.dream.spring.controller")
 

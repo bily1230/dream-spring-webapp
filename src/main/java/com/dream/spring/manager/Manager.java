@@ -1,4 +1,4 @@
-package com.dream.spring.juintdemo;
+package com.dream.spring.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Manager {
 	@Autowired
-	private ManagerName managerName;
+	private ManagerJunit managerJunit;
 
 
 	public String getName(){
-		managerName
+		return managerJunit.getName();
 	}
 }
