@@ -1,15 +1,15 @@
-package com.dream.spring.manager;
+package com.dream.spring.juintdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
-@Controller
+@Component
 public class Manager {
-	
 	@Autowired
 	private ManagerName managerName;
-	
+
+
 	public String getName(){
-		return managerName.getName();
+		managerName
 	}
 }
