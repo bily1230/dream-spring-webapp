@@ -18,7 +18,7 @@
  var websocket = null;
  //判断当前浏览器是否支持WebSocket
  if ('WebSocket' in window) {
-     websocket = new ReconnectingWebSocket("ws://localhost:8088/dream/websocket");
+     websocket = new WebSocket("ws://localhost:8088/dream/websocket");
  }
  else {
      alert('当前浏览器 Not support websocket')
@@ -62,7 +62,8 @@
  //发送消息
  function send() {
      var message = document.getElementById('text').value;
+     console.log(message);
      websocket.send(message);
  }
-66 </script>
+</script>
 </html>
