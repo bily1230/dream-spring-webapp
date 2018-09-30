@@ -21,7 +21,7 @@ public class ControllerTest {
 	
     @Test
     public void testHomePage(){
-       /* HelloWord helloWord = new HelloWord();
+       /*11 HelloWord helloWord = new HelloWord();
         MockMvc mockMvc = standaloneSetup(helloWord).build();
         mockMvc.perform(get("/helloWord/readWord"))
                 .andExpect(view().name("return"));*/
