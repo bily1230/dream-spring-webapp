@@ -16,7 +16,7 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.ZooDefs.Ids;
 
 public class ZKTest {
-	static final String CONNECT_ADD = "172.17.0.2:2181";
+	static final String CONNECT_ADD = "47.98.251.14:2181";
 	static final int SESSION_OUTTIME = 2000;
 	static final CountDownLatch connectedSemaphore = new CountDownLatch(1);
 
