@@ -13,7 +13,7 @@ public class Length {
 	
 	public static void main(String[] args) {
 		String a = "1";
-		String[] bb = new String[] {"bb", "cc"};
+		String[] bb = new String[] {"b11b", "cc"};
 		System.out.println(bb.length);
 		System.out.println(a.length());
 	}
