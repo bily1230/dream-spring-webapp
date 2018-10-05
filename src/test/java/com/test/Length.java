@@ -12,7 +12,7 @@ package com.test;
 public class Length {
 	
 	public static void main(String[] args) {
-		String a = "1";
+		String a = "12";
 		String[] bb = new String[] {"bb", "cc"};
 		System.out.println(bb.length);
 		System.out.println(a.length());
