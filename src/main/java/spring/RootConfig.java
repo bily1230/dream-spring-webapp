@@ -11,14 +11,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.dream.spring.session.SessionConfig;
+
 
 /**
  * Created by ning on 2017/8/27.
  */
 
 @Configuration
-
-@Import({AspectConfig.class,RabbitConfiguration.class,JpaConfiguration.class})
+@Import({AspectConfig.class,JpaConfiguration.class,SessionConfig.class})
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {

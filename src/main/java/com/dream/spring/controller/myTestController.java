@@ -23,11 +23,13 @@ public class myTestController {
 	private AspectJManager aspectJManager;
 	private static final Logger LOGGER = LoggerFactory.getLogger(myTestController.class);
 
-	@RequestMapping(value = "/put", method = RequestMethod.PUT)
+	@RequestMapping(value = "/put", method = RequestMethod.POST)
 	public Object test(HttpServletRequest request) {
 
 		LOGGER.info("--------------");
-
+		String bb = (String) request.getSession().getAttribute("ningbin");
+		System.out.println(bb);
+		request.getSession().setAttribute("ningbin", "bily1230");
 		String name = request.getParameter("name");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("name", name);
@@ -38,6 +40,7 @@ public class myTestController {
 	@RequestMapping(value = "/tput/{age}", method = RequestMethod.POST)
 	public Object testput(@PathVariable("age") String age, HttpServletRequest request) {
 		//String username =  user.get("name");
+		request.getSession().setAttribute("ningbin", "bily1230");
 		String name = request.getParameter("name");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("name", age);

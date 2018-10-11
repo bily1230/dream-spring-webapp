@@ -19,7 +19,7 @@ public class RedisTest {
 	public void connect() {
 		//连接本地的 Redis 服务
 		Jedis jedis = new Jedis("47.98.251.14", 6379);
-		jedis.set("test", "sewqe");
+		jedis.set("name", "sewqe");
 		jedis.set("personid", "wangsan");
 		String key = jedis.get("name");
 		System.out.println("连接成功" + key);
