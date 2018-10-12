@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.dream.spring.mq.RabbitConfiguration;
 import com.dream.spring.session.SessionConfig;
 
 
@@ -19,7 +20,7 @@ import com.dream.spring.session.SessionConfig;
  */
 
 @Configuration
-@Import({AspectConfig.class,JpaConfiguration.class,SessionConfig.class})
+@Import({AspectConfig.class,JpaConfiguration.class,RabbitConfiguration.class})
 @ComponentScan(basePackages ={"com.dream.spring"},excludeFilters =
         {@ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
 public class RootConfig {

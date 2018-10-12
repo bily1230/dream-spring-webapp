@@ -13,7 +13,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 import redis.clients.jedis.JedisShardInfo;
 
 /**
- * .
+ * Spring Session 利用redis处理分布式 session 问题.
  * @author nb
  * @date 2018年10月9日
  */
@@ -21,7 +21,7 @@ import redis.clients.jedis.JedisShardInfo;
 @Configuration
 public class SessionConfig {
 	@Bean
-	public JedisConnectionFactory connectionFactory() {
+	public JedisConnectionFactory sessionConnectionFactory() {
 		JedisShardInfo jeJedisShardInfo = new JedisShardInfo("47.98.251.14", 6379);
 		jeJedisShardInfo.setConnectionTimeout(1000);
 		return new JedisConnectionFactory(jeJedisShardInfo);

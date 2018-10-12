@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import spring.RabbitConfiguration;
+import com.dream.spring.mq.RabbitConfiguration;
 
 public class TemplateCustomer {
 	public static void main(String[] args) {

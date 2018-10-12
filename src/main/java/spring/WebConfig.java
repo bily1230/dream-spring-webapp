@@ -16,6 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.http.converter.HttpMessageConverter;
 
 import com.dream.spring.manager.Manager;
+import com.dream.spring.mq.RabbitConfiguration;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 
 
@@ -25,7 +26,6 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 //@Configuration注解表明这个类是一个配置类
 @Configuration
 @EnableWebMvc
-//@ComponentScan("com.dream.spring")
 @Import({WebProject.class, AspectConfig.class})
 //应用xml装配的bean
 @ComponentScan("com.dream.spring")
