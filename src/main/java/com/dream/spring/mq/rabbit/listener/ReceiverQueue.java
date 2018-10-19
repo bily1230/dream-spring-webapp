@@ -12,7 +12,7 @@ public class ReceiverQueue{
 	@RabbitListener(queues = "MyQueue1")
 	@SendTo("replyExchange/k2")
     public String handle(Message message) {
-        System.out.println("Receiver------ : "+ message.getBody());
-        return "pppp";
+        System.out.println("Receiver------ : "+ new String(message.getBody()));
+        return "zzzzzzzzzzz";
     }
 }

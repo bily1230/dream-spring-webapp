@@ -11,9 +11,8 @@ public class TemplateCustomer {
 		ApplicationContext context = new AnnotationConfigApplicationContext(RabbitConfiguration.class);
 		RabbitTemplate rabbitTemplate = context.getBean(RabbitTemplate.class);
 		/*rabbitTemplate.setQueue("myqueue");*/
-		rabbitTemplate.setExchange("myExchange");
-		rabbitTemplate.setRoutingKey("k2");
-		
+		rabbitTemplate.setExchange("MyExchange");
+		rabbitTemplate.setRoutingKey("k1");
 		System.out.println("Received-------:"+rabbitTemplate.receive());
 		
 	}

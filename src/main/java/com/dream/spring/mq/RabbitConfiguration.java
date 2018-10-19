@@ -45,8 +45,7 @@ public class RabbitConfiguration {
 
 	@Bean
 	public ConnectionFactory connectionFactory() {
-		CachingConnectionFactory connectionFactory = 
-				new CachingConnectionFactory("47.98.251.14", 5672);
+		CachingConnectionFactory connectionFactory = new CachingConnectionFactory("47.98.251.14", 5672);
 		connectionFactory.setUsername("guest");
 		connectionFactory.setPassword("guest");
 		return connectionFactory;
@@ -64,7 +63,6 @@ public class RabbitConfiguration {
 	 */
 	@Bean
 	public RabbitTemplate rabbitTemplate() {
-
 		RabbitTemplate template = new RabbitTemplate(connectionFactory());
 		RetryTemplate retryTemplate = new RetryTemplate();
 		ExponentialBackOffPolicy backOffPolicy = new ExponentialBackOffPolicy();
@@ -81,13 +79,8 @@ public class RabbitConfiguration {
 	/*
 	 * AsyncRabbitTemplate 中 replyRebbitTemplate() 和simpleMessageListenerContainer() 中的 setMessageConverter()消息转换器必须相同
 	 */
-/*	@Bean
+	/*@Bean
 	public AsyncRabbitTemplate asyncRabbitTemplate() {
-		RabbitTemplate template = new RabbitTemplate(connectionFactory());
-		template.setExchange(EXCHANGE_ONE);
-		template.setRoutingKey("k1");
-		template.setReplyTimeout(6000);
-		template.setMandatory(true);
 		return new AsyncRabbitTemplate(replyRabbitTemplate(), simpleMessageListenerContainer(), "replyExchange/k2");
 	}
 
@@ -107,9 +100,8 @@ public class RabbitConfiguration {
 		rabbitTemplate.setReplyTimeout(6000);
 		rabbitTemplate.setMandatory(true);
 		return rabbitTemplate;
-
-	}*/
-
+	}
+*/
 	@Bean
 	public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
 		SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
@@ -129,12 +121,11 @@ public class RabbitConfiguration {
 	public SimpleMessageListenerContainer simpleMessageListenerContainer() {
 		SimpleMessageListenerContainer factory = new SimpleMessageListenerContainer();
 		factory.setConnectionFactory(connectionFactory());
-		/*
-		 * factory.setConcurrentConsumers(3);
-		 * factory.setMaxConcurrentConsumers(10);
-		 */
+		factory.setConcurrentConsumers(3);
+		factory.setMaxConcurrentConsumers(10);
 		factory.setMessageConverter(new SimpleMessageConverter());
 		factory.addQueueNames(QUEUE_TWO);
+		factory.setMessageListener(rabbitReceiverMessageListener());
 		return factory;
 	}
 
