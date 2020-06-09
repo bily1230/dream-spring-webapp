@@ -11,6 +11,8 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author nb
@@ -18,9 +20,12 @@ import javax.websocket.server.ServerEndpoint;
  */
 @ServerEndpoint("/websocket")
 public class WebSocketController {
-	
+	private Session session;
+	private static Map<String, WebSocketController> clients = new ConcurrentHashMap<String, WebSocketController>();
 	@OnOpen
 	public void onOpen(Session session) {
+
+		clients.put("xiaoming", this);
 		System.out.println("有新连接加入！");
 	}
 	
@@ -31,13 +36,21 @@ public class WebSocketController {
 	
 	@OnMessage
 	public void onMessage(String message, Session session) {
+
 		System.out.println("客户端的消息：" + message);
+		for(int i = 0; i<5;i++){
+			sendMessageTo("receiver:"+i,"222");
+		}
 	}
 	
 	@OnError
 	public void onError(Session session, Throwable error) {
 		
 	}
-	
-	
+
+	public void sendMessageTo(String message, String To){
+		for (WebSocketController item : clients.values()) {
+				item.session.getAsyncRemote().sendText(message);
+		}
+	}
 }
