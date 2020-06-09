@@ -27,12 +27,13 @@ public class myTestController {
 	public Object test(HttpServletRequest request) {
 
 		LOGGER.info("--------------");
-		String bb = (String) request.getSession().getAttribute("ningbin");
+		/*String bb = (String) request.getSession().getAttribute("ningbin");
 		System.out.println(bb);
 		request.getSession().setAttribute("ningbin", "bily1230");
-		String name = request.getParameter("name");
+		String name = request.getParameter("name");*/
+		System.out.println("1111****************");
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("name", name);
+		map.put("name", "111");
 		map.put("age", 12);
 		return map;
 	}

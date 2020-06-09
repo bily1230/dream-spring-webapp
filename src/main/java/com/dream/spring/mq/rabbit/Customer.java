@@ -15,12 +15,12 @@ import com.rabbitmq.client.Envelope;
 
 
 public class Customer {
-	private final static String QUEUE_NAME = "myqueue1";
+	private final static String QUEUE_NAME = "MyQueue1";
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException, TimeoutException {
 		ConnectionFactory factory = new ConnectionFactory();    
-        factory.setHost("localhost");    
+        factory.setHost("47.98.251.14");
         //指定用户 密码  
         factory.setUsername("guest");  
         factory.setPassword("guest");  
@@ -45,6 +45,7 @@ public class Customer {
             }  
           };  
           channel.basicConsume(QUEUE_NAME, true, consumer);  
-	}  
+	    }
+
 	}
 

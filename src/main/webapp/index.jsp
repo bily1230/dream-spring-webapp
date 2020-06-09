@@ -4,6 +4,9 @@
   <head>
     <title>helloWord</title>
   </head>
+  <%
+
+  %>
   <body>
     <%--  <form action="/helloWord/12/readWord?name=你" method="post">
         <input type="submit" value="提交">
