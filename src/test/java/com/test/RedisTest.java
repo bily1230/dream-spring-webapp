@@ -25,8 +25,7 @@ public class RedisTest {
 	@Test
 	public void connect() {
 		//连接本地的 Redis 服务
-		Jedis jedis = new Jedis("47.98.251.14", 6379);
-		jedis.set("name", "sewqe");
+		Jedis jedis = new Jedis("10.222.11.54", 6380);
 		jedis.set("personid", "wangsan");
 		String key = jedis.get("name");
 		System.out.println("连接成功" + key);
