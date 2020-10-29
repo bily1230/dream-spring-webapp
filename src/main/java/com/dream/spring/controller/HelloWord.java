@@ -1,10 +1,10 @@
 package com.dream.spring.controller;
 
 
-import java.sql.SQLException;
-
-import javax.naming.NamingException;
-
+import com.dream.spring.repository.UserDataJpaRepository.UserDataJpaRepository;
+import com.dream.spring.repository.jdbc.UserRepository;
+import com.dream.spring.repository.jdbcTemplate.UserTemplateRepository;
+import com.dream.spring.repository.jpa.UserJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
@@ -14,7 +14,6 @@ import org.springframework.amqp.rabbit.AsyncRabbitTemplate;
 import org.springframework.amqp.rabbit.AsyncRabbitTemplate.RabbitConverterFuture;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.dream.spring.repository.UserDataJpaRepository.UserDataJpaRepository;
-import com.dream.spring.repository.jdbc.UserRepository;
-import com.dream.spring.repository.jdbcTemplate.UserTemplateRepository;
-import com.dream.spring.repository.jpa.UserJpaRepository;
+import javax.naming.NamingException;
+import java.sql.SQLException;
 
 /**
  * Created by ning on 2017/8/20.

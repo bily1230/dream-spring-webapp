@@ -1,8 +1,6 @@
 package com.dream.spring.mq;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.dream.spring.mq.rabbit.listener.RabbitReceiverMessageListener;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.Binding.DestinationType;
@@ -10,7 +8,6 @@ import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Declarable;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.AsyncRabbitTemplate;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -26,7 +23,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
 import org.springframework.retry.support.RetryTemplate;
 
-import com.dream.spring.mq.rabbit.listener.RabbitReceiverMessageListener;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Rabbit
