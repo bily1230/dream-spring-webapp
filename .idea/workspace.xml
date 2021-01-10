@@ -5,32 +5,13 @@
       <artifact name="dream-spring-webapp:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="14c9d61b-3891-49a4-aa67-77782e93ea6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/SocketChannelInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/handler/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/handler/ConnectionContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/scheduler/CancelableScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/scheduler/HashedWheelScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/scheduler/RetryTimerTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/scheduler/SchedulerKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/MqTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/MqTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/ProcessEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/scheduler/HashedWheelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dream_spring_webapp_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dream_spring_webapp_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_4_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_http_client_1_1_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_1_7_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_1_7_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_1_RELEASE.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dream-spring-webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dream-spring-webapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dream/spring/controller/HelloWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/controller/HelloWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dream/spring/mq/RabbitConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/mq/RabbitConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dream/spring/netty/SocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +60,9 @@
       <GitPushTagMode />
     </option>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -89,14 +73,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
         <option name="userSettingsFile" value="$PROJECT_DIR$/../../maven/settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1ckHRPfKeW6Cab5buqJnbsABrzt" />
@@ -105,7 +83,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -186,6 +163,61 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
       <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorDevice" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="clearAppDataOnEachLaunch" value="true" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="MqTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.test.MqTest" />
@@ -277,61 +309,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="FlashRunConfigurationType">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorDevice" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="clearAppDataOnEachLaunch" value="true" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -397,7 +374,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
       <option name="vmParameters" />
       <option name="alternativeJrePath" />
@@ -463,7 +440,6 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Debug with VisualVM">
         <option name="DEBUG_PORT" value="61321" />
-        <option name="visualVMId" value="383672914392012" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -584,6 +560,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
     <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_INHERITED" />
@@ -666,7 +643,9 @@
       <workItem from="1600786107151" duration="2107000" />
       <workItem from="1600823897808" duration="3728000" />
       <workItem from="1600914238609" duration="4050000" />
-      <workItem from="1603960200843" duration="1138000" />
+      <workItem from="1603960200843" duration="6422000" />
+      <workItem from="1610196924656" duration="1208000" />
+      <workItem from="1610250695054" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="12">
       <created>1503329508577</created>
@@ -786,20 +765,19 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12" />
@@ -808,144 +786,6 @@
     <MESSAGE value="jpa" />
     <MESSAGE value="bug" />
     <option name="LAST_COMMIT_MESSAGE" value="bug" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="360" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603960558009">
-      <screen x="0" y="23" width="1792" height="1006" />
-    </state>
-    <state x="360" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1603960558009" />
-    <state x="709" y="245" key="#com.intellij.ide.util.MemberChooser" timestamp="1599567135051">
-      <screen x="0" y="23" width="1792" height="1012" />
-    </state>
-    <state x="709" y="245" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1012@0.23.1792.1012" timestamp="1599120091530" />
-    <state x="709" y="244" key="#com.intellij.ide.util.MemberChooser/1792.23.1920.1057/0.23.1792.1009@0.23.1792.1009" timestamp="1598595419010" />
-    <state x="709" y="245" key="#com.intellij.ide.util.MemberChooser/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599567135051" />
-    <state x="2483" y="702" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1600225425360">
-      <screen x="1792" y="23" width="1920" height="1057" />
-    </state>
-    <state x="2483" y="702" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1792.23.1920.1057/0.23.1792.1001@1792.23.1920.1057" timestamp="1600225425360" />
-    <state x="612" y="244" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1598595604264">
-      <screen x="0" y="23" width="1792" height="1009" />
-    </state>
-    <state x="612" y="244" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/1792.23.1920.1057/0.23.1792.1009@0.23.1792.1009" timestamp="1598595604264" />
-    <state width="1414" height="192" key="GridCell.Tab.0.bottom" timestamp="1600258529913">
-      <screen x="0" y="23" width="1792" height="1020" />
-    </state>
-    <state width="1324" height="294" key="GridCell.Tab.0.bottom/0.23.1792.1002@0.23.1792.1002" timestamp="1600077474436" />
-    <state width="1329" height="294" key="GridCell.Tab.0.bottom/0.23.1792.1006@0.23.1792.1006" timestamp="1600072107723" />
-    <state width="1338" height="320" key="GridCell.Tab.0.bottom/0.23.1792.1012@0.23.1792.1012" timestamp="1599119832727" />
-    <state width="1338" height="224" key="GridCell.Tab.0.bottom/0.23.1792.1015@0.23.1792.1015" timestamp="1599123870726" />
-    <state width="1310" height="426" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263141" />
-    <state width="1414" height="192" key="GridCell.Tab.0.bottom/0.23.1792.1020@0.23.1792.1020" timestamp="1600258529913" />
-    <state width="1318" height="164" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1001@0.23.1792.1001" timestamp="1600152152442" />
-    <state width="1321" height="320" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1002@0.23.1792.1002" timestamp="1600084490155" />
-    <state width="1330" height="294" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1600071128256" />
-    <state width="1337" height="137" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599567378156" />
-    <state width="1336" height="137" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1020@0.23.1792.1020" timestamp="1599647069454" />
-    <state width="1318" height="195" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.1022@0.23.1792.1022" timestamp="1600157706860" />
-    <state width="1414" height="192" key="GridCell.Tab.0.bottom/1792.23.1920.1057/0.23.1792.997@1792.23.1920.1057" timestamp="1600246160954" />
-    <state width="1414" height="192" key="GridCell.Tab.0.center" timestamp="1600258529912">
-      <screen x="0" y="23" width="1792" height="1020" />
-    </state>
-    <state width="1324" height="294" key="GridCell.Tab.0.center/0.23.1792.1002@0.23.1792.1002" timestamp="1600077474436" />
-    <state width="1329" height="294" key="GridCell.Tab.0.center/0.23.1792.1006@0.23.1792.1006" timestamp="1600072107723" />
-    <state width="1338" height="320" key="GridCell.Tab.0.center/0.23.1792.1012@0.23.1792.1012" timestamp="1599119832727" />
-    <state width="1338" height="224" key="GridCell.Tab.0.center/0.23.1792.1015@0.23.1792.1015" timestamp="1599123870726" />
-    <state width="1310" height="426" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263140" />
-    <state width="1414" height="192" key="GridCell.Tab.0.center/0.23.1792.1020@0.23.1792.1020" timestamp="1600258529912" />
-    <state width="1318" height="164" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1001@0.23.1792.1001" timestamp="1600152152442" />
-    <state width="1321" height="320" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1002@0.23.1792.1002" timestamp="1600084490154" />
-    <state width="1330" height="294" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1600071128255" />
-    <state width="1337" height="137" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599567378155" />
-    <state width="1336" height="137" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1020@0.23.1792.1020" timestamp="1599647069454" />
-    <state width="1318" height="195" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.1022@0.23.1792.1022" timestamp="1600157706860" />
-    <state width="1414" height="192" key="GridCell.Tab.0.center/1792.23.1920.1057/0.23.1792.997@1792.23.1920.1057" timestamp="1600246160952" />
-    <state width="1414" height="192" key="GridCell.Tab.0.left" timestamp="1600258529912">
-      <screen x="0" y="23" width="1792" height="1020" />
-    </state>
-    <state width="1324" height="294" key="GridCell.Tab.0.left/0.23.1792.1002@0.23.1792.1002" timestamp="1600077474436" />
-    <state width="1329" height="294" key="GridCell.Tab.0.left/0.23.1792.1006@0.23.1792.1006" timestamp="1600072107723" />
-    <state width="1338" height="320" key="GridCell.Tab.0.left/0.23.1792.1012@0.23.1792.1012" timestamp="1599119832726" />
-    <state width="1338" height="224" key="GridCell.Tab.0.left/0.23.1792.1015@0.23.1792.1015" timestamp="1599123870726" />
-    <state width="1310" height="426" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263140" />
-    <state width="1414" height="192" key="GridCell.Tab.0.left/0.23.1792.1020@0.23.1792.1020" timestamp="1600258529912" />
-    <state width="1318" height="164" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1001@0.23.1792.1001" timestamp="1600152152441" />
-    <state width="1321" height="320" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1002@0.23.1792.1002" timestamp="1600084490154" />
-    <state width="1330" height="294" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1600071128254" />
-    <state width="1337" height="137" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599567378155" />
-    <state width="1336" height="137" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1020@0.23.1792.1020" timestamp="1599647069453" />
-    <state width="1318" height="195" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.1022@0.23.1792.1022" timestamp="1600157706860" />
-    <state width="1414" height="192" key="GridCell.Tab.0.left/1792.23.1920.1057/0.23.1792.997@1792.23.1920.1057" timestamp="1600246160952" />
-    <state width="1414" height="192" key="GridCell.Tab.0.right" timestamp="1600258529913">
-      <screen x="0" y="23" width="1792" height="1020" />
-    </state>
-    <state width="1324" height="294" key="GridCell.Tab.0.right/0.23.1792.1002@0.23.1792.1002" timestamp="1600077474436" />
-    <state width="1329" height="294" key="GridCell.Tab.0.right/0.23.1792.1006@0.23.1792.1006" timestamp="1600072107723" />
-    <state width="1338" height="320" key="GridCell.Tab.0.right/0.23.1792.1012@0.23.1792.1012" timestamp="1599119832727" />
-    <state width="1338" height="224" key="GridCell.Tab.0.right/0.23.1792.1015@0.23.1792.1015" timestamp="1599123870726" />
-    <state width="1310" height="426" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263140" />
-    <state width="1414" height="192" key="GridCell.Tab.0.right/0.23.1792.1020@0.23.1792.1020" timestamp="1600258529913" />
-    <state width="1318" height="164" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1001@0.23.1792.1001" timestamp="1600152152442" />
-    <state width="1321" height="320" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1002@0.23.1792.1002" timestamp="1600084490154" />
-    <state width="1330" height="294" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1600071128256" />
-    <state width="1337" height="137" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599567378156" />
-    <state width="1336" height="137" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1020@0.23.1792.1020" timestamp="1599647069454" />
-    <state width="1318" height="195" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.1022@0.23.1792.1022" timestamp="1600157706860" />
-    <state width="1414" height="192" key="GridCell.Tab.0.right/1792.23.1920.1057/0.23.1792.997@1792.23.1920.1057" timestamp="1600246160953" />
-    <state width="1310" height="426" key="GridCell.Tab.1.bottom" timestamp="1599126263142">
-      <screen x="0" y="23" width="1792" height="1017" />
-    </state>
-    <state width="1310" height="426" key="GridCell.Tab.1.bottom/0.23.1792.1012@0.23.1792.1012" timestamp="1599119418596" />
-    <state width="1310" height="426" key="GridCell.Tab.1.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263142" />
-    <state width="1310" height="426" key="GridCell.Tab.1.center" timestamp="1599126263142">
-      <screen x="0" y="23" width="1792" height="1017" />
-    </state>
-    <state width="1310" height="426" key="GridCell.Tab.1.center/0.23.1792.1012@0.23.1792.1012" timestamp="1599119418596" />
-    <state width="1310" height="426" key="GridCell.Tab.1.center/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263142" />
-    <state width="1310" height="426" key="GridCell.Tab.1.left" timestamp="1599126263141">
-      <screen x="0" y="23" width="1792" height="1017" />
-    </state>
-    <state width="1310" height="426" key="GridCell.Tab.1.left/0.23.1792.1012@0.23.1792.1012" timestamp="1599119418596" />
-    <state width="1310" height="426" key="GridCell.Tab.1.left/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263141" />
-    <state width="1310" height="426" key="GridCell.Tab.1.right" timestamp="1599126263142">
-      <screen x="0" y="23" width="1792" height="1017" />
-    </state>
-    <state width="1310" height="426" key="GridCell.Tab.1.right/0.23.1792.1012@0.23.1792.1012" timestamp="1599119418596" />
-    <state width="1310" height="426" key="GridCell.Tab.1.right/0.23.1792.1017@0.23.1792.1017" timestamp="1599126263142" />
-    <state x="397" y="165" key="SettingsEditor" timestamp="1603960580068">
-      <screen x="0" y="23" width="1792" height="1006" />
-    </state>
-    <state x="397" y="165" key="SettingsEditor/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1603960580068" />
-    <state x="573" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1600823899127">
-      <screen x="0" y="23" width="1792" height="995" />
-    </state>
-    <state x="-1306" y="206" key="com.intellij.ide.util.TipDialog/-1920.-146.1920.1057/0.23.1792.1001@-1920.-146.1920.1057" timestamp="1600092900965" />
-    <state x="573" y="355" key="com.intellij.ide.util.TipDialog/-1920.-146.1920.1057/0.23.1792.998@0.23.1792.998" timestamp="1600349623771" />
-    <state x="573" y="356" key="com.intellij.ide.util.TipDialog/0.23.1792.1001@0.23.1792.1001" timestamp="1599010445175" />
-    <state x="573" y="356" key="com.intellij.ide.util.TipDialog/0.23.1792.1006@0.23.1792.1006" timestamp="1600698742591" />
-    <state x="573" y="352" key="com.intellij.ide.util.TipDialog/0.23.1792.995@0.23.1792.995" timestamp="1600786107584" />
-    <state x="573" y="356" key="com.intellij.ide.util.TipDialog/1792.23.1920.1057/0.23.1792.1001@0.23.1792.1001" timestamp="1600046654424" />
-    <state x="573" y="356" key="com.intellij.ide.util.TipDialog/1792.23.1920.1057/0.23.1792.1002@0.23.1792.1002" timestamp="1598665798183" />
-    <state x="573" y="354" key="com.intellij.ide.util.TipDialog/1792.23.1920.1057/0.23.1792.995@0.23.1792.995" timestamp="1600823899127" />
-    <state width="487" height="350" key="documentation.popup.size" timestamp="1599901303212">
-      <screen x="0" y="23" width="1792" height="1012" />
-    </state>
-    <state width="487" height="350" key="documentation.popup.size/1792.23.1920.1057/0.23.1792.1012@0.23.1792.1012" timestamp="1599901303212" />
-    <state x="-1326" y="125" width="771" height="511" key="find.popup" timestamp="1600093171071">
-      <screen x="-1920" y="-146" width="1920" height="1057" />
-    </state>
-    <state x="-1326" y="125" width="771" height="511" key="find.popup/-1920.-146.1920.1057/0.23.1792.1001@-1920.-146.1920.1057" timestamp="1600093171071" />
-    <state x="554" y="281" width="683" height="486" key="find.popup/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1597979978767" />
-    <state x="561" y="242" width="671" height="671" key="search.everywhere.popup" timestamp="1600914359604">
-      <screen x="0" y="23" width="1792" height="995" />
-    </state>
-    <state x="-1319" y="86" width="718" height="711" key="search.everywhere.popup/-1920.-146.1920.1057/0.23.1792.1001@-1920.-146.1920.1057" timestamp="1600094380975" />
-    <state x="561" y="242" width="671" height="672" key="search.everywhere.popup/-1920.-146.1920.1057/0.23.1792.998@0.23.1792.998" timestamp="1600349630357" />
-    <state x="561" y="243" width="670" height="673" key="search.everywhere.popup/0.23.1792.1001@0.23.1792.1001" timestamp="1598082409791" />
-    <state x="561" y="244" width="671" height="678" key="search.everywhere.popup/0.23.1792.1006@0.23.1792.1006" timestamp="1600699788948" />
-    <state x="561" y="242" width="671" height="671" key="search.everywhere.popup/0.23.1792.995@0.23.1792.995" timestamp="1600914359604" />
-    <state x="561" y="244" width="670" height="676" key="search.everywhere.popup/1792.23.1920.1057/0.23.1792.1006@0.23.1792.1006" timestamp="1598931384088" />
-    <state x="561" y="247" width="670" height="686" key="search.everywhere.popup/1792.23.1920.1057/0.23.1792.1020@0.23.1792.1020" timestamp="1599646823070" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
