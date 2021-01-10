@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c9d61b-3891-49a4-aa67-77782e93ea6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul-prob.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +107,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dream-tools-webapp" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32988507" />
@@ -645,7 +646,7 @@
       <workItem from="1600914238609" duration="4050000" />
       <workItem from="1603960200843" duration="6422000" />
       <workItem from="1610196924656" duration="1208000" />
-      <workItem from="1610250695054" duration="265000" />
+      <workItem from="1610250695054" duration="1845000" />
     </task>
     <task id="LOCAL-00001" summary="12">
       <created>1503329508577</created>
