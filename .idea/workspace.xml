@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14c9d61b-3891-49a4-aa67-77782e93ea6c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dream-parent/dream-zuul.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -649,7 +646,7 @@
       <workItem from="1603960200843" duration="6422000" />
       <workItem from="1610196924656" duration="1208000" />
       <workItem from="1610250695054" duration="2410000" />
-      <workItem from="1610287874527" duration="1724000" />
+      <workItem from="1610287874527" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="12">
       <created>1503329508577</created>
